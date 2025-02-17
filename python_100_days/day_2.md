@@ -6,8 +6,10 @@
 ```
 
 **The output**
-> ['34', '67', '55', '33', '12', '98']
-> ('34', '67', '55', '33', '12', '98')
+ ```
+ ['34', '67', '55', '33', '12', '98']
+ ('34', '67', '55', '33', '12', '98')
+ ```
 
 ### solution 1
 
@@ -20,8 +22,8 @@ print(tuple_output)
 
 ## Question 5:
 > Define a class which has at least two methods:
-> getString: to get a string from console input
-> printString: to print the string in upper case.
+> - getString: to get a string from console input
+> - printString: to print the string in upper case.
 > Also please include simple test function to test the class methods.
 
 ### solution 1
@@ -45,8 +47,11 @@ mystr.printStr()
 > Following are the fixed values of C and H:
 > C is 50. H is 30.
 > D is the variable whose values should be input to your program in a comma-separated sequence.
-> For example Let us assume the following comma separated input sequence is given to the program: 100,150,180
-> 18,22,24
+> For example Let us assume the following comma separated input sequence is given to the program:
+```
+ 100,150,180
+ 18,22,24
+ ```
 
 ### solution 1
 ```python
