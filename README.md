@@ -57,4 +57,6 @@
 
 **Python:Avances 7**
 > AI/Ml
-
+```python
+print('ok')
+```
