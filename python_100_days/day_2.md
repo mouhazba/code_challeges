@@ -92,3 +92,92 @@ rsp = list(map(lambda D: str(round(sqrt(2*C*int(D)/H))), x))
 
 print(','.join(rsp))
 ```
+
+## Question 7
+> Write a program that accepts a comma separated sequence of words as input and prints 
+> the words in a comma-separated sequence after sorting them alphabetically.
+
+> Suppose the following input is supplied to the program:
+
+```
+without,hello,bag,world
+```
+
+> then output should be:
+```
+bag,hello,without,world
+```
+### Solution 1
+
+```python
+inputs = input('=> : ').split(',')
+print(','.join(sorted(inputs)))
+```
+
+## Question 8
+> Write a program that accepts sequence of lines as input and prints 
+> the lines after making all characters in the sentence capitalized.
+
+> Suppose the following input is supplied to the program:
+```
+Hello world
+Practice makes perfect
+```
+
+> Then, the output should be:
+```
+HELLO WORLD
+RACTICE MAKES PERFECT
+```
+### Solution 1:
+```python
+list_lines = []
+while True:
+    line = inputs = input('=> : \n')
+    if not line:
+        break
+    list_lines.append(line.upper())
+
+for line in list_lines:
+    print(line)
+```
+
+### Solution 2
+```python
+import os
+with open('lines.txt', 'w') as fp:
+    while True:
+        line = input('=> : \n')
+        if not line:
+            break
+        fp.write(f'{line.upper()}\n')
+
+print('---'*25)
+with open('lines.txt', 'r') as f:
+    while line:= f.readline():
+        print(line.strip())
+
+if os.path.exists('lines.txt'):
+    os.remove('lines.txt')
+```
+
+### Solution 3
+```python
+from pathlib import Path
+file = Path("lines.txt")
+
+with file.open('w') as fp:
+    while True:
+        line = input('=> : \n')
+        if not line:
+            break
+        fp.write(f'{line.upper()}\n')
+
+print('---'*25)
+with file.open('r') as f:
+    while line:= f.readline():
+        print(line.strip())
+
+if file.exists():
+    file.unlink('lines.txt')
+```
