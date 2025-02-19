@@ -27,6 +27,19 @@ print(' '.join(sorted(outputs)))
 ### solution 2
 
 ```python
+word = input('=> : ').split()
+
+for i in word:
+    if word.count(i) > 1:
+        word.remove(i)     
+
+word.sort()
+print(" ".join(word))
+```
+
+### solution 3
+
+```python
 inputs = input('=> : ').split(' ')
 
 outputs = set(inputs)
@@ -69,17 +82,32 @@ outputs = list(filter(lambda n: int(n,2) % 5 == 0,inpust))
 
 print('.'.join(outputs))
 ```
+### Solution 3
+
+```python
+print(*(binary for binary in input().split(',') if int(binary,base=2)%5==0))
+```
 
 ## Question 12
 > Write a program, which will find all such numbers between 1000 and 3000 (both included) such that each digit of the number is an even 
 > number. The numbers obtained should be printed in a comma-separated sequence on a single line.
 
-### solution 1
+### Solution 1
 ```python
 inpust = list(range(1000, 3000))
 outputs = list(filter(lambda n: n % 2 == 0,inpust))
 outputs = list(map(str,outputs))
 print(','.join(outputs))
+```
+
+### Solution 2
+```python
+'''
+genere un sequence filtree sans liste intermediaire:
+*(expression for element in iterable if condition)
+'''
+print(*(binary for binary in input('=> : ').split(',') if int(binary,base=2)%5==0))
+
 ```
 
 
