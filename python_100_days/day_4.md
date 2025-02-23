@@ -1,52 +1,61 @@
-## Question 10
-> Write a program that accepts a sequence of whitespace separated words as input and prints the words after removing 
+## Question 14
+> Write a program that accepts a sentence and calculate the number of upper case letters and lower case letters.
 > all duplicate words and sorting them alphanumerically.
 
 > Suppose the following input is supplied to the program:
 ```
-hello world and practice makes perfect and hello world again
+Hello world!
 ```
 
 **The output**
 ```
-again and hello makes perfect practice world
+UPPER CASE 1
+LOWER CASE 9
 ```
 
 ### solution 1
 
 ```python
-inputs = input('=> : ').split(' ')
+inputs = input(" => : ?")
 
-outputs = []
-for w in inputs:
-    if w not in outputs:
-        outputs.append(w)
-print(' '.join(sorted(outputs)))
+total_low = 0
+total_upper = 0
+for c in inputs:
+    total_low += c.islower()
+    total_upper += c.isupper()
+
+print(f'UPPER CASE {total_upper}')
+print(f'LOWER CASE {total_low}')
+
 ```
 
 ### solution 2  
 
 ```python
-word = input('=> : ').split()
+inputs = input(" => : ?")
 
-for i in word:
-    if word.count(i) > 1:
-        word.remove(i)     
-
-word.sort()
-print(" ".join(word))
+print(f'LOWER CASE : {sum(map(lambda x: x.islower(), inputs))}')
+print(f'UPPER CASE : {sum(map(lambda x: x.isupper(), inputs))}')
 ```
 
 ### solution 3
 
 ```python
-inputs = input('=> : ').split(' ')
+inputs = input(" => : ?")
 
-outputs = set(inputs)
-
-print(' '.join(sorted(outputs)))
+print(f'LOWER CASE : {len(list(filter(lambda x: x.islower(), inputs)))}')
+print(f'UPPER CASE : {len(list(filter(lambda x: x.isupper(), inputs)))}')
 ```
-## Question 11:
+### solution 4
+```python
+inputs = input(" => : ?")
+
+print(f'LOWER CASE : {sum(1 for c in inputs if c.islower())}')
+print(f'UPPER CASE : {sum(1 for c in inputs if c.isupper())}')
+```
+
+
+## Question 15:
 > Write a program which accepts a sequence of comma separated 4 digit binary numbers as its input and then check whether
 they are divisible by 5 or not. The numbers that are divisible by 5 are to be printed in a comma separated sequence.
 > Example:
