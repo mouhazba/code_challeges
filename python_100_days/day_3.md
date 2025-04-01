@@ -54,7 +54,9 @@ they are divisible by 5 or not. The numbers that are divisible by 5 are to be pr
 0100,0011,1010,1001
 ```
 > Then the output should be:
-
+```
+1010
+```
 ### solution 1
 ```python
 def BinToDecimal(n):
